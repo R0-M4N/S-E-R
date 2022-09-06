@@ -9,7 +9,6 @@ public class SerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SerApplication.class, args);
-		SwapperService swapperService = new SwapperService();
 	}
 
 }

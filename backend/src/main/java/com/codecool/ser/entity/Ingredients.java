@@ -1,8 +1,11 @@
 package com.codecool.ser.entity;
 
+import org.springframework.data.rest.webmvc.RepositoryRestController;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@RepositoryRestController
 public class Ingredients {
     public static final Map<String, String> INGREDIENTS = new HashMap<>()
     {{
