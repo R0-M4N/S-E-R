@@ -12,8 +12,8 @@ public class SwapperService {
         String pickedIngredientName = pickedIngredient.getName();
         String exchangedIngredient = "";
 
-        if (ingredientPairs.containsKey(pickedIngredient)) {
-            exchangedIngredient = ingredientPairs.get(pickedIngredient);
+        if (ingredientPairs.containsKey(pickedIngredientName)) {
+            exchangedIngredient = ingredientPairs.get(pickedIngredientName);
         }
 
         return exchangedIngredient;
