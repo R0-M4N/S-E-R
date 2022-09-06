@@ -2,9 +2,23 @@ dataset:
   ingredients:
     - name: Pineapple
       protein: 10
-    - name: Chicken
+    - name: Chicken meat
       protein: 30
     - name: Grape
       protein: 5
-    - name: Grass
+    - name: Kale
       protein: 1
+    - name: Cow meat
+      protein: 123
+    - name: Milk
+      protein: 20
+    - name: Hazelnut
+      protein: 3
+    - name: Cheese
+      protein: 60
+    - name: Water
+      protein: 0
+    - name: Bread
+      protein: 200
+    - name: Shrimp
+      protein: 50
