@@ -3,10 +3,7 @@ package com.codecool.ser.controller;
 import com.codecool.ser.persistence.repository.IngredientRepository;
 import com.codecool.ser.service.IngredientService;
 import com.codecool.ser.persistence.entity.Ingredient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,8 +24,8 @@ public class IngredientController {
     }
 
     @PostMapping
-    public Ingredient addIngredient() {
-        Ingredient newIngredient = new Ingredient("Paprika", 250);
+    public Ingredient addIngredient(@RequestBody Ingredient ingredient) {
+        Ingredient newIngredient = new Ingredient(ingredient.getName(), ingredient.getProtein());
         return ingredientRepository.save(newIngredient);
     }
 }
