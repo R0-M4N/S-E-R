@@ -11,6 +11,11 @@ public class Ingredients {
         put("Milk", "Cheese");
         put("Kale", "Bread");
         put("Cow meat", "Hazelnut");
+        put("Hazelnut", "Cow meat");
+        put("Bread", "Kale");
+        put("Cheese", "Milk");
+        put("Grape", "Pineapple");
+        put("Shrimp", "Chicken meat");
     }};
 
 }
