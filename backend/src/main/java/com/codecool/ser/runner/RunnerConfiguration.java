@@ -18,10 +18,11 @@ public class RunnerConfiguration {
     @Bean
     ApplicationRunner runner(IngredientRepository ingredientRepository) {
         return args -> {
-            System.out.println("--- All ingredients");
-            //ingredientRepository.findAll().forEach(System.out::println);
-
             ingredientRepository.saveAll(ingredients);
+            /*System.out.println("--- All ingredients");
+            ingredientRepository.findAll().forEach(System.out::println);
+
+            ingredientRepository.saveAll(ingredients).forEach(System.out::println);
 
             System.out.println("--- All ingredients with less than or equals to 20 amount");
             ingredientRepository.findByProteinLessThanEqual(20)
@@ -29,6 +30,7 @@ public class RunnerConfiguration {
             System.out.println("--- All ingredients with name starting with gr and protein less than equals 20");
             ingredientRepository.findByNameStartingWithIgnoreCaseAndProteinLessThanEqual("gr", 20)
                     .forEach(System.out::println);
+             */
         };
 
 
