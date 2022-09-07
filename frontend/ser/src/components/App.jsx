@@ -1,11 +1,15 @@
 import Header from './Header'
-import Ingredients from './hooks/Ingredients';
+import IngredientSelect from './IngredientSelect';
 
 function App() {
+  const handleClick = () => {
+    console.log("Your mama")
+  }
+
   return (
     <div className='App'>
       <Header />
-      <Ingredients />
+      <IngredientSelect onClick={handleClick} />
     </div>
   );
 }

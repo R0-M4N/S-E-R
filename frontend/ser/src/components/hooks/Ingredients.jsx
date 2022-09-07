@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-function Ingredients() {
+export function Ingredients() {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -28,15 +28,7 @@ function Ingredients() {
         return <div>Loading...</div>;
     } else {
         return (
-            <ul>
-                {items.map(item => (
-                    <li key={item.id}>
-                        {item.name} 
-                    </li>
-                ))}
-            </ul>
+            items
         );
     }
 }
-
-export default Ingredients
