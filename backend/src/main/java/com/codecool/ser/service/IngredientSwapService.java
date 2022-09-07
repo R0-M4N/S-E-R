@@ -2,6 +2,7 @@ package com.codecool.ser.service;
 
 import com.codecool.ser.entity.Ingredients;
 import com.codecool.ser.persistence.entity.Ingredient;
+import com.codecool.ser.persistence.repository.IngredientRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -9,16 +10,17 @@ import java.util.Map;
 @Service
 public class IngredientSwapService {
     Map<String, String> ingredientPairs = Ingredients.INGREDIENTS;
+    private final IngredientRepository ingredientRepository;
 
+    public IngredientSwapService(IngredientRepository ingredientRepository) {
+        this.ingredientRepository = ingredientRepository;
+    }
 
-    public String swapIngredients(Ingredient pickedIngredient) {
+    public Ingredient swapIngredients(Ingredient pickedIngredient) {
         String pickedIngredientName = pickedIngredient.getName();
-        String exchangedIngredient = "";
+        Ingredient exchangedIngredient = ingredientRepository.findByName(pickedIngredientName);
 
-        if (ingredientPairs.containsKey(pickedIngredientName)) {
-            exchangedIngredient = ingredientPairs.get(pickedIngredientName);
-        }
-
+        System.out.println(exchangedIngredient);
         return exchangedIngredient;
     }
 }
