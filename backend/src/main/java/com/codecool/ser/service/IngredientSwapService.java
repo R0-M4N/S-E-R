@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 @Service
-public class SwapperService {
+public class IngredientSwapService {
     Map<String, String> ingredientPairs = Ingredients.INGREDIENTS;
 
 
