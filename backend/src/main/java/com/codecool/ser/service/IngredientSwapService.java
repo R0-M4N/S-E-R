@@ -18,9 +18,9 @@ public class IngredientSwapService {
 
     public Ingredient swapIngredients(Ingredient pickedIngredient) {
         String pickedIngredientName = pickedIngredient.getName();
-        Ingredient exchangedIngredient = ingredientRepository.findByName(pickedIngredientName);
+        String swappedIngredientName = ingredientPairs.get(pickedIngredientName);
+        Ingredient exchangedIngredient = ingredientRepository.findByName(swappedIngredientName);
 
-        System.out.println(exchangedIngredient);
         return exchangedIngredient;
     }
 }
