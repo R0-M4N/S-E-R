@@ -1,9 +1,11 @@
-import Header from './components/Header'
+import Header from './Header'
+import Ingredients from './hooks/Ingredients';
 
 function App() {
   return (
     <div className='App'>
       <Header />
+      <Ingredients />
     </div>
   );
 }

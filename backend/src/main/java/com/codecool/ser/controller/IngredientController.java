@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("ingredients")
 public class IngredientController {
     private final IngredientRepository ingredientRepository;
@@ -36,4 +37,5 @@ public class IngredientController {
     public String swapIngredient(@RequestBody Ingredient ingredient){
         return swapperService.swapIngredients(ingredient);
     }
+
 }
