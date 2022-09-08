@@ -1,4 +1,3 @@
-import React from 'react'
 import Sidebar from './Sidebar';
 import Overview from '../pages/Overview';
 import Swap from '../pages/Swap';
