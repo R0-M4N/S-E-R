@@ -1,4 +1,4 @@
-import IngredientSelect from './IngredientSelect';
+import FetchIngredients from './FetchIngredients';
 import Sidebar from './Sidebar';
 import Overview from '../pages/Overview';
 import Swap from '../pages/Swap';
@@ -19,7 +19,7 @@ function App() {
             <Route path='/swap' exact element={<Swap />} />
           </Routes>
         </Router>
-        <IngredientSelect />
+        <FetchIngredients />
       </>
     </div>
   );
