@@ -1,4 +1,3 @@
-import React from 'react';
 import IngredientSelect from './IngredientSelect';
 import Sidebar from './Sidebar';
 import Overview from '../pages/Overview';

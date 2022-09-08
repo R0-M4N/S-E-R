@@ -13,12 +13,18 @@ export default function IngredientSelect() {
             .then(ingredientData => setIngredients(ingredientData));
     },[]);
 
+    const handleChange = event => {
+        const value = event.target.value;
+        console.log(value);
+    }
+
+
         return (
             <FormControl sx={{minWidth:200, paddingLeft: 50}} className="select-container">
-                Select your Ingredient
-                <Select>
+                <InputLabel sx={{paddingLeft:50}}>Select your ingredient</InputLabel>
+                <Select onChange={handleChange} defaultValue=''>
                     {ingredients.map ((ingredient) => 
-                    <MenuItem key={ingredient.id}>
+                    <MenuItem key={ingredient.id} value={ingredient.name}>
                         {ingredient.name}
                     </MenuItem>
                     )}
