@@ -1,4 +1,3 @@
-import '../index.css';
 import Header from './Header';
 import Routing from './Routing';
 
