@@ -1,23 +1,26 @@
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material"
-import {Ingredients} from './hooks/Ingredients';
+import { MenuItem, Select } from '@mui/material';
+import { useState } from "react";
+import { useEffect } from "react";
 
-const IngredientSelect = ({ onClick }) => {
-    console.log(Ingredients)
+export default function IngredientSelect() {
+    const URL = "http://localhost:8080/ingredients";
+    const [ingredients, setIngredients] = useState([]);
 
-  return (
-    <FormControl fullWidth>
-        <InputLabel id='ingredient-select-label'>Select ingredient</InputLabel>
-        <Select
-        labelId='ingredient-select-label'
-        id='ingredient-select'
-        // value
-        label='Ingredient'
-        onClick={onClick}
-        >
-            <MenuItem value={20}>Twenty</MenuItem>
-        </Select>
-    </FormControl>
-  )
-}
 
-export default IngredientSelect
+    useEffect(() => {
+            fetch(URL, {method: "GET"})
+            .then(response => response.json())
+            .then(ingredientData => setIngredients(ingredientData));
+    },[]);
+
+        return (
+            <Select>
+                {ingredients.map ((ingredient) => 
+                <MenuItem key={ingredient.id}>
+                    {ingredient.name}
+                </MenuItem>
+                )}
+            </Select>
+        )
+}  
+
