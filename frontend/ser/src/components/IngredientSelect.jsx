@@ -20,8 +20,8 @@ export default function IngredientSelect() {
 
 
         return (
-            <FormControl sx={{minWidth:200, paddingLeft: 10}} className="select-container">
-                <InputLabel sx={{paddingLeft:10}}>Select your ingredient</InputLabel>
+            <FormControl sx={{minWidth:200, paddingLeft: 50}} className="select-container">
+                <InputLabel sx={{paddingLeft:50}}>Select your ingredient</InputLabel>
                 <Select onChange={handleChange} defaultValue=''>
                     {ingredients.map ((ingredient) => 
                     <MenuItem key={ingredient.id} value={ingredient.name}>
