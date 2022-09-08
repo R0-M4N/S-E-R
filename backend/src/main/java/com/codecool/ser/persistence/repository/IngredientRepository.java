@@ -10,4 +10,5 @@ import java.util.List;
 public interface IngredientRepository extends JpaRepository<Ingredient, Integer> {
     List<Ingredient> findByProteinLessThanEqual(int amount);
     List<Ingredient> findByNameStartingWithIgnoreCaseAndProteinLessThanEqual(String name, int amount);
+    Ingredient findByName(String name);
 }

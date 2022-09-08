@@ -29,7 +29,6 @@ function Ingredients() {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
-        console.log(items);
         return (
             <ul>
                 {items.map(item => (

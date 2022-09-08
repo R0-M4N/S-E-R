@@ -4,14 +4,14 @@ import PropTypes from 'prop-types'
 
 const Header = ({ title }) => {
   return (
-    <header>
+    <header className='header'>
         <h1>{title}</h1>
     </header>
   )
 }
 
 Header.defaultProps = {
-    title: "Dashboard 1",
+    title: "Food Dashboard",
 }
 
 Header.propsType = {

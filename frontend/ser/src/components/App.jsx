@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header'
-import Ingredients from './hooks/Ingredients';
+import IngredientSelect from './IngredientSelect'
 import Sidebar from './Sidebar';
 import Overview from '../pages/Overview';
 import Swap from '../pages/Swap';
@@ -19,7 +19,7 @@ function App() {
           </Routes>
         </Router>
         <Header />
-        <Ingredients />
+          <IngredientSelect />
       </>
     </div>
   );
