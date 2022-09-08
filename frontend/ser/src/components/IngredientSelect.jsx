@@ -1,4 +1,4 @@
-import { MenuItem, Select } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -14,13 +14,16 @@ export default function IngredientSelect() {
     },[]);
 
         return (
-            <Select>
-                {ingredients.map ((ingredient) => 
-                <MenuItem key={ingredient.id}>
-                    {ingredient.name}
-                </MenuItem>
-                )}
-            </Select>
+            <FormControl sx={{minWidth:200, paddingLeft: 10}} className="select-container">
+                <InputLabel sx={{paddingLeft:10}}>Select your ingredient</InputLabel>
+                <Select>
+                    {ingredients.map ((ingredient) => 
+                    <MenuItem key={ingredient.id}>
+                        {ingredient.name}
+                    </MenuItem>
+                    )}
+                </Select>
+            </FormControl>
         )
 }  
 
