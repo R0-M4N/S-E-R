@@ -9,7 +9,7 @@ function FetchAndPostIngredient() {
             fetch(URL, {method: "GET"})
             .then(response => response.json())
             .then(ingredientData => setIngredients(ingredientData))
-            .then(error => console.log(error));
+            .catch(error => console.log(error));
     },[]);
 
     const handleChange = event => {
@@ -25,8 +25,7 @@ function FetchAndPostIngredient() {
             }
           })
           .then((response) => response.json())
-          .then((data) => 
-          console.log(data))
+          .then((data) => console.log(data))
     }
 
     return (
