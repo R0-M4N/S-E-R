@@ -1,12 +1,12 @@
 import Header from './Header'
-import Ingredients from './hooks/Ingredients';
+import IngredientSelect from './IngredientSelect'
 
 function App() {
   return (
-    <div className='App'>
+    <>
       <Header />
-      <Ingredients />
-    </div>
+      <IngredientSelect />
+    </>
   );
 }
 
