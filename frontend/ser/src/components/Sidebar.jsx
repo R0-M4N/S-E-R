@@ -7,9 +7,11 @@ import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
 import SubMenu from './SubMenu';
 
+
 const Nav = styled.div`
-  background: #15171c;
+  background: #005;
   height: 80px;
+  width: 0px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -25,7 +27,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: #15171c;
+  background: #005;
   width: 250px;
   height: 100vh;
   display: flex;
@@ -41,6 +43,7 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
+
 const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false);
 
@@ -48,11 +51,12 @@ const Sidebar = () => {
   
     return (
       <>
-        <IconContext.Provider value={{ color: '#fff' }}>
+        <IconContext.Provider value={{ color: '#f33' }}>
           <Nav>
             <NavIcon to='#'>
               <FaIcons.FaBars onClick={showSidebar} />
             </NavIcon>
+            
           </Nav>
           <SidebarNav sidebar={sidebar}>
             <SidebarWrap>
