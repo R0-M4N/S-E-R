@@ -19,6 +19,7 @@ public class Ingredients {
         put("Cheese", "Milk");
         put("Grape", "Pineapple");
         put("Shrimp", "Chicken meat");
+        put("Water", "Milk");
     }};
 
 }
