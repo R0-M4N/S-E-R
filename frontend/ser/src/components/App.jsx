@@ -9,7 +9,6 @@ function App() {
       <>
         <Header />
         <Routing />
-        <IngredientSelect />
       </>
     </div>
   );

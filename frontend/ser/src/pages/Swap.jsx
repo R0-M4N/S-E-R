@@ -1,9 +1,15 @@
-const Swap = () => {
+import Header from '../components/Header'
+import IngredientSelect from '../components/IngredientSelect'
+
+function Swap() {
   return (
-    <div className='swap'>
-        <h1>Swap</h1>
+    <div className='App'>
+      <>
+        <Header title={"Swapper"} />
+        <IngredientSelect />
+      </>
     </div>
-  )
+  );
 }
 
-export default Swap
+export default Swap;
