@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RepositoryRestController
-public class Ingredients {
+public class IngredientPairs {
     public static final Map<String, String> INGREDIENTS = new HashMap<>()
     {{
         put("Chicken meat", "Shrimp");

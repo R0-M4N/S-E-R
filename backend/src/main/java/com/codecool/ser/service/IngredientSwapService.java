@@ -1,6 +1,6 @@
 package com.codecool.ser.service;
 
-import com.codecool.ser.entity.Ingredients;
+import com.codecool.ser.entity.IngredientPairs;
 import com.codecool.ser.persistence.entity.Ingredient;
 import com.codecool.ser.persistence.repository.IngredientRepository;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Service
 public class IngredientSwapService {
-    Map<String, String> ingredientPairs = Ingredients.INGREDIENTS;
+    Map<String, String> ingredientPairs = IngredientPairs.INGREDIENTS;
     private final IngredientRepository ingredientRepository;
 
     public IngredientSwapService(IngredientRepository ingredientRepository) {
