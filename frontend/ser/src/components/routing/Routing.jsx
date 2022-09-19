@@ -1,6 +1,6 @@
-import Sidebar from './Sidebar';
-import Overview from '../pages/Overview';
-import Swap from '../pages/Swap';
+import Sidebar from '../sidebar/Sidebar';
+import Overview from '../../pages/Overview';
+import Swap from '../../pages/Swap';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
 

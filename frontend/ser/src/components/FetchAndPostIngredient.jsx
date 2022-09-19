@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import IngredientSelect from "./IngredientSelect";
+import IngredientSelect from "./ingredientSelect/IngredientSelect";
 
 function FetchAndPostIngredient() {
     const URL = "http://localhost:8080/ingredients";

@@ -1,5 +1,5 @@
 import FetchAndPostIngredient from '../components/FetchAndPostIngredient';
-import Header from '../components/Header'
+import Header from "../components/header/Header";
 
 function Swap() {
   return (
