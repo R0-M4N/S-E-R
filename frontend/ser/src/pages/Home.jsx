@@ -1,8 +1,8 @@
-const Overview = () => {
+const Home = () => {
   return (
     <div className='home'>
     </div>
   );
 };
 
-export default Overview;
+export default Home;
