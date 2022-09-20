@@ -1,0 +1,25 @@
+.profile-logo {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 1138px;
+    top: 24px;
+}
+
+.profile-vector {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+}
+
+.user-icon {
+    position: absolute;
+    left: 8.29%;
+    right: 8.38%;
+    top: 8.33%;
+    bottom: 8.33%;
+
+    background: #333333;
+}

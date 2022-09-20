@@ -1,12 +1,12 @@
-import FetchAndPostIngredient from '../components/swapIngredient/FetchAndPostIngredient';
+import IngredientSwapper from '../components/molecules/IngredientSwapper';
 import Header from "../components/header/Header";
 
 function SwapIngredient() {
   return (
     <div className='App'>
       <>
-        <Header title={"Swap ingredient"} />
-        <FetchAndPostIngredient />
+        <Header title="Swap ingredient" /> {/* put Header into layout later */}
+        <IngredientSwapper />
       </>
     </div>
   );

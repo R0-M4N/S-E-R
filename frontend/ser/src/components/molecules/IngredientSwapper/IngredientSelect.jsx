@@ -7,8 +7,8 @@ const IngredientSelect = ({ ingredients }) => {
 
   const handleChange = event => {
     const value = event.target.value;
-    console.log(value)
-    fetch('http://localhost:8080/ingredients/swap', {
+    const url = process.env.API_URL
+    fetch(url + '/ingredients/swap', {
         method: 'POST',
         body: value
         , headers: {

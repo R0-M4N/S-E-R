@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import IngredientSelect from "./IngredientSelect";
 
-function FetchAndPostIngredient() {
-    const URL = "http://localhost:8080/ingredients";
+function IngredientSwapper() {
+    const url = process.env.API_URL
+    const URL = url + "/ingredients";
     const [ingredients, setIngredients] = useState([]);
 
     useEffect(() => {
@@ -20,4 +21,4 @@ function FetchAndPostIngredient() {
     )
 }
 
-export default FetchAndPostIngredient
+export default IngredientSwapper
