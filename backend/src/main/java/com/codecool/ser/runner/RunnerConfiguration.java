@@ -20,8 +20,6 @@ public class RunnerConfiguration {
         return args -> {
             ingredientRepository.saveAll(ingredients);
         };
-
-
     }
 
     public void setIngredients(List<Ingredient> ingredients) {

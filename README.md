@@ -1,2 +1,2 @@
 # S-E-R
-Swap Ingredients - Application
+SwapIngredient Ingredients - Application

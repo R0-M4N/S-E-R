@@ -1,5 +1,5 @@
-import Header from './Header';
-import Routing from './Routing';
+import Routing from '../routing/Routing';
+import Header from "../header/Header";
 
 function App() {
   return (
