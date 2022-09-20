@@ -18,7 +18,7 @@ const SidebarData = [
         ]
     },
     {
-        title: 'Swapper',
+        title: 'Swap ingredient',
         path: '/swap',
         icon: <AiIcons.AiFillHome />,
     }
