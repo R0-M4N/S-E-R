@@ -3,11 +3,9 @@ import Header from '../components/Header'
 
 function Swap() {
   return (
-    <div className='App'>
-      <>
+    <div className='Swap'>
         <Header title={"Swapper"} />
         <FetchAndPostIngredient />
-      </>
     </div>
   );
 }
