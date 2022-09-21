@@ -11,5 +11,5 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Integer>
     List<Ingredient> findByProteinLessThanEqual(int amount);
     List<Ingredient> findByNameStartingWithIgnoreCaseAndProteinLessThanEqual(String name, int amount);
     Ingredient findByName(String name);
-    Ingredient findById(int id);
+    Ingredient findById(long id);
 }

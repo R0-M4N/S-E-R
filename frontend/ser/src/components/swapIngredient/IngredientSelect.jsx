@@ -6,18 +6,13 @@ const IngredientSelect = ({ ingredients }) => {
   const [exchangedIngredient, setExchangedIngredient] = useState({id: '', name: '', protein: ''});
 
   const handleChange = event => {
+    const url = 'http://localhost:8080'
     const value = event.target.value;
-    console.log(value)
-    fetch('http://localhost:8080/ingredients/swap', {
-        method: 'POST',
-        body: value
-        , headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        }
-      })
+    const swapUrl = url + '/ingredients/swap/' + value;
+    //console.log(swapUrl);
+    fetch(swapUrl, {method: 'GET'})
       .then((response) => response.json())
       .then((data) => setExchangedIngredient(data))
-      console.log("second rerender")
 }
   return (
     <>
@@ -25,7 +20,7 @@ const IngredientSelect = ({ ingredients }) => {
         <InputLabel sx={{paddingLeft:50}}>Select your ingredient</InputLabel>
         <Select defaultValue=''  onChange={handleChange}>
             {ingredients.map ((ingredient) => 
-            <MenuItem key={ingredient.id} value={ingredient.name}>
+            <MenuItem key={ingredient.id} value={ingredient.id}>
                 {ingredient.name}
             </MenuItem>
             )}
