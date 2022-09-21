@@ -41,13 +41,12 @@ public class IngredientEndpoint {
         return ingredientSwapService.swapByProtein(ingredient);
     }
 
-    @PostMapping("/swap/{id}")
-    public List<Ingredient> swapByCategoryAndProtein(@RequestBody String category, @PathVariable ("id") Long id){
+    @GetMapping("/swap/{category}/{id}")
+    public List<Ingredient> swapByCategoryAndProtein(@PathVariable ("category") IngredientCategory category, @PathVariable ("id") Long id){
 
-        System.out.println(category + " " + id );
+        System.out.println(category);
         Ingredient ingredient = ingredientSwapService.findById(id);
-        System.out.println(IngredientCategory.valueOf(category));
-        return ingredientSwapService.swapIngredientByCategoryAndProtein(IngredientCategory.valueOf(category), ingredient);
+        return ingredientSwapService.swapIngredientByCategoryAndProtein(category, ingredient);
     }
 
 }

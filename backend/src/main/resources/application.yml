@@ -7,7 +7,7 @@ dataset:
         protein: 5
         category: FRUIT
       - name: Chicken meat
-        protein: 30
+        protein: 10
         category: MEAT
       - name: Cow meat
         protein: 123
