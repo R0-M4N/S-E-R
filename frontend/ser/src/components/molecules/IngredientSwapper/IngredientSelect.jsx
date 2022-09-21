@@ -7,17 +7,11 @@ const IngredientSelect = ({ ingredients }) => {
 
   const handleChange = event => {
     const value = event.target.value;
-    const url = process.env.API_URL
-    fetch(url + '/ingredients/swap', {
-        method: 'POST',
-        body: value
-        , headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        }
-      })
+    const url = process.env.API_URL;
+    const URL = url + '/ingredients/swap/' + value;
+    fetch(URL, {method: 'GET'})
       .then((response) => response.json())
       .then((data) => setExchangedIngredient(data))
-      console.log("second rerender")
 }
   return (
     <>
@@ -25,7 +19,7 @@ const IngredientSelect = ({ ingredients }) => {
         <InputLabel sx={{paddingLeft:50}}>Select your ingredient</InputLabel>
         <Select defaultValue=''  onChange={handleChange}>
             {ingredients.map ((ingredient) => 
-            <MenuItem key={ingredient.id} value={ingredient.name}>
+            <MenuItem key={ingredient.id} value={ingredient.id}>
                 {ingredient.name}
             </MenuItem>
             )}
