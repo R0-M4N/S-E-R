@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import IngredientSelect from "./IngredientSelect";
 
+{/*process.env.API_URL for url*/}
+
 function IngredientSwapper() {
-    const url = process.env.API_URL
-    const URL = url + "/ingredients";
     const [ingredients, setIngredients] = useState([]);
+    const url = "http://localhost:8080"
+    const URL = url + "/ingredients";
 
     useEffect(() => {
             fetch(URL, {method: "GET"})
             .then(response => response.json())
             .then(ingredientData => setIngredients(ingredientData))
-            .then(console.log("after first rerender"))
             .catch(error => console.log(error))
     },[]);
 

@@ -2,20 +2,14 @@
     position: absolute;
     width: 42px;
     height: 42px;
-    left: 1138px;
+    left: 1950px;
     top: 24px;
-}
-
-.profile-vector {
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
 }
 
 .user-icon {
     position: absolute;
+    width: 50px;
+    height: 50px;
     left: 8.29%;
     right: 8.38%;
     top: 8.33%;
