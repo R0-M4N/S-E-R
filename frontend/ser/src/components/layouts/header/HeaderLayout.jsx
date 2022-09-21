@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Header = ({title}) => {
+const HeaderLayout = ({title}) => {
     return (
         <header className='header'>
             <h1>{title}</h1>
@@ -8,11 +8,11 @@ const Header = ({title}) => {
     )
 }
 
-Header.defaultProps = {
+HeaderLayout.defaultProps = {
     title: "Food Dashboard",
 }
 
-Header.propsType = {
+HeaderLayout.propsType = {
     title: PropTypes.string.isRequired
 }
-export default Header;
+export default HeaderLayout;

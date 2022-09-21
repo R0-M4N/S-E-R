@@ -4,7 +4,7 @@ const ShowResult = ({result}) => {
     console.log("result")
     return (
         <Button>
-            {result.name ? result.name : "Recommended Swap"}
+            {result.name ? result.name : ""}
         </Button>
     )
 }
