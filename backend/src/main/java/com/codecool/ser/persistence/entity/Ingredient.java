@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Ingredient {
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String name;
     private int protein;
     @Enumerated(value = EnumType.STRING)

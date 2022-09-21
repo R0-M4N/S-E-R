@@ -1,5 +1,6 @@
 package com.codecool.ser.endpoint;
 
+import com.codecool.ser.data.IngredientCategory;
 import com.codecool.ser.persistence.repository.IngredientRepository;
 import com.codecool.ser.service.IngredientService;
 import com.codecool.ser.persistence.entity.Ingredient;
@@ -30,9 +31,23 @@ public class IngredientEndpoint {
         return ingredientService.addIngredient(ingredient);
     }
 
+//    @PostMapping("/swap")
+//    public Ingredient swapIngredient(@RequestBody Ingredient ingredient){
+//        return ingredientSwapService.swapIngredients(ingredient);
+//    }
+
     @PostMapping("/swap")
-    public Ingredient swapIngredient(@RequestBody Ingredient ingredient){
-        return ingredientSwapService.swapIngredients(ingredient);
+    public List<Ingredient> swapByProtein(@RequestBody Ingredient ingredient){
+        return ingredientSwapService.swapByProtein(ingredient);
+    }
+
+    @PostMapping("/swap/{id}")
+    public List<Ingredient> swapByCategoryAndProtein(@RequestBody String category, @PathVariable ("id") Long id){
+
+        System.out.println(category + " " + id );
+        Ingredient ingredient = ingredientSwapService.findById(id);
+        System.out.println(IngredientCategory.valueOf(category));
+        return ingredientSwapService.swapIngredientByCategoryAndProtein(IngredientCategory.valueOf(category), ingredient);
     }
 
 }
