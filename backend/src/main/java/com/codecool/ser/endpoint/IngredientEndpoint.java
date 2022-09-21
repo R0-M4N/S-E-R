@@ -30,8 +30,8 @@ public class IngredientEndpoint {
         return ingredientService.addIngredient(ingredient);
     }
 
-    @PostMapping("/swap")
-    public Ingredient swapIngredient(@RequestBody String name){
-        return ingredientSwapService.swapIngredients(name);
+    @GetMapping("/swap/{id}")
+    public Ingredient swapIngredient(@PathVariable long id){
+        return ingredientSwapService.swapIngredients(id);
     }
 }

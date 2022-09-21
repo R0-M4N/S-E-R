@@ -9,7 +9,6 @@ function FetchAndPostIngredient() {
             fetch(URL, {method: "GET"})
             .then(response => response.json())
             .then(ingredientData => setIngredients(ingredientData))
-            .then(console.log("after first rerender"))
             .catch(error => console.log(error))
     },[]);
 
