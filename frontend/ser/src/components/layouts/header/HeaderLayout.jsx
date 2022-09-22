@@ -18,7 +18,7 @@ const HeaderLayout = ({title}) => {
 }
 
 HeaderLayout.defaultProps = {
-    title: "Food Dashboard",
+    title: "FooDashboard",
 }
 
 HeaderLayout.propsType = {

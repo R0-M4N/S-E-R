@@ -31,7 +31,7 @@ public class IngredientEndpoint {
     }
 
     @GetMapping("/swap/{id}")
-    public List<Ingredient> swapByProtein(@PathVariable long id) {
+    public Ingredient swapByProtein(@PathVariable long id) {
         return ingredientSwapService.swapByProtein(id);
     }
 
