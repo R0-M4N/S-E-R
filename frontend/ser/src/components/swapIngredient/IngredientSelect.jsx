@@ -6,9 +6,11 @@ const IngredientSelect = ({ ingredients }) => {
   const [exchangedIngredient, setExchangedIngredient] = useState({id: '', name: '', protein: ''});
 
   const handleChange = event => {
+    const url = 'http://localhost:8080'
     const value = event.target.value;
-    const URL = "http://localhost:8080/ingredients/swap/" + value;
-    fetch(URL, {method: 'GET'})
+    const swapUrl = url + '/ingredients/swap/' + value;
+    //console.log(swapUrl);
+    fetch(swapUrl, {method: 'GET'})
       .then((response) => response.json())
       .then((data) => setExchangedIngredient(data))
 }
