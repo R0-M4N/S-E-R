@@ -17,17 +17,18 @@ public class IngredientSwapService {
         this.ingredientRepository = ingredientRepository;
     }
 
-    public List<Ingredient> swapByProtein(long id){
+    public Ingredient swapByProtein(long id){
         Ingredient pickedIngredient = ingredientRepository.findById(id);
         int amount = pickedIngredient.getProtein();
-        return ingredientRepository.findAllIngredientsByProtein(amount - 5, amount + 5);
+        List<Ingredient> ingredientList = ingredientRepository.findAllIngredientsByProteinIsBetween(amount - 5, amount + 5);
+        return ingredientList.get(0);
     }
     public List<Ingredient> swapIngredientByCategoryAndProtein(IngredientCategory category, Ingredient pickedIngredient){
         int amount = pickedIngredient.getProtein();
         return ingredientRepository.findByCategoryAndProteinIsBetween(category, amount-5, amount+20);
     }
 
-    public Ingredient findById(Long id){
-        return ingredientRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+    public Ingredient findById(long id){
+        return ingredientRepository.findById(id);
     }
 }
