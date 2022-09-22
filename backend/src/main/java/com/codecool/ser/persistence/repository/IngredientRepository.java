@@ -11,12 +11,8 @@ import java.util.List;
 
 @RepositoryRestController
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
-    List<Ingredient> findByProteinLessThanEqual(int amount);
-    List<Ingredient> findByNameStartingWithIgnoreCaseAndProteinLessThanEqual(String name, int amount);
-    @Query("SELECT i FROM Ingredient i WHERE i.protein BETWEEN :min and :max")
-    List<Ingredient> findAllIngredientsByProtein(@Param("min") int min, @Param("max") int max);
+    List<Ingredient> findAllIngredientsByProteinIsBetween(int protein, int protein2);
     List<Ingredient> findByCategoryAndProteinIsBetween(IngredientCategory category, int protein, int protein2);
-
     Ingredient findByName(String name);
     Ingredient findById(long id);
 }
