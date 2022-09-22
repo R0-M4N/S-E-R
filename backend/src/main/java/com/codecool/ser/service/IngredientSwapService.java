@@ -18,7 +18,7 @@ public class IngredientSwapService {
     public Ingredient swapByProtein(long id) {
         Ingredient pickedIngredient = ingredientRepository.findById(id);
         int amount = pickedIngredient.getProtein();
-        List<Ingredient> eligibleIngredients = ingredientRepository.findAllIngredientsByProtein(amount - 5, amount + 5);
+        List<Ingredient> eligibleIngredients = ingredientRepository.findAllIngredientsByProteinIsBetween(amount - 5, amount + 5);
         return eligibleIngredients.get(0);
     }
 
