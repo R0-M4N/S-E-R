@@ -14,9 +14,9 @@ const IngredientSelect = ({ ingredients }) => {
 }
   return (
     <>
-    <FormControl sx={{minWidth:200, paddingLeft: 50}} className="select-container">
+    <FormControl sx={{minWidth:200, paddingLeft: 50}}>
         <InputLabel sx={{paddingLeft:50}}>Select your ingredient</InputLabel>
-        <Select defaultValue=''  onChange={handleChange}>
+        <Select defaultValue=''  onChange={handleChange} className="select-container">
             {ingredients.map ((ingredient) => 
             <MenuItem key={ingredient.id} value={ingredient.id}>
                 {ingredient.name}

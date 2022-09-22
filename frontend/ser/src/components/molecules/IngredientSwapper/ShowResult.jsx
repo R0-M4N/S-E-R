@@ -1,11 +1,14 @@
-import { Button} from "@mui/material"
+import { Button } from "@mui/material"
 
 const ShowResult = ({result}) => {
-    return (
-        <Button>
-            {result.name ? result.name : ""}
-        </Button>
-    )
+    console.log(result)
+    if (result.size > 0) {
+        return (
+            <Button>
+                {result.name ? result.name : ""}
+            </Button>
+        )
+    } return ""
 }
 
 export default ShowResult;
