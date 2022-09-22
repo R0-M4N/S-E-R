@@ -1,9 +1,11 @@
 package com.codecool.ser.persistence.entity;
 
+
 import com.codecool.ser.data.IngredientCategory;
 import lombok.*;
 
 import javax.persistence.*;
+
 
 @Entity
 @Setter
@@ -13,7 +15,7 @@ import javax.persistence.*;
 public class Ingredient {
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
     private String name;
     private int protein;
     @Enumerated(value = EnumType.STRING)

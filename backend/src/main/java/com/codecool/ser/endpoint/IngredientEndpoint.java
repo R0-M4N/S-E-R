@@ -31,6 +31,7 @@ public class IngredientEndpoint {
         return ingredientService.addIngredient(ingredient);
     }
 
+
 //    @PostMapping("/swap")
 //    public Ingredient swapIngredient(@RequestBody Ingredient ingredient){
 //        return ingredientSwapService.swapIngredients(ingredient);
@@ -47,6 +48,10 @@ public class IngredientEndpoint {
         System.out.println(category);
         Ingredient ingredient = ingredientSwapService.findById(id);
         return ingredientSwapService.swapIngredientByCategoryAndProtein(category, ingredient);
-    }
 
+    @GetMapping("/swap/{id}")
+    public Ingredient swapIngredient(@PathVariable long id){
+        return ingredientSwapService.swapIngredients(id);
+
+    }
 }

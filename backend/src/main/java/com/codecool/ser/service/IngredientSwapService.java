@@ -11,16 +11,16 @@ import java.util.Map;
 
 @Service
 public class IngredientSwapService {
-    Map<String, String> ingredientPairs = IngredientPairs.INGREDIENTS;
+    Map<String, String> ingredientNamePairs = IngredientPairs.INGREDIENTS;
     private final IngredientRepository ingredientRepository;
 
     public IngredientSwapService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
 
-    public Ingredient swapIngredients(Ingredient pickedIngredient) {
-        String pickedIngredientName = pickedIngredient.getName();
-        String swappedIngredientName = ingredientPairs.get(pickedIngredientName);
+    public Ingredient swapIngredients(long id) {
+        Ingredient swappedIngredient = ingredientRepository.findById(id);
+        String swappedIngredientName = ingredientNamePairs.get(swappedIngredient.getName());
         return ingredientRepository.findByName(swappedIngredientName);
     }
 

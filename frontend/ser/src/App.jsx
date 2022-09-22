@@ -1,13 +1,9 @@
-import Header from './Header';
-import Routing from './Routing';
+import Routing from './components/routing/Routing';
 
 function App() {
   return (
     <div className='App'>
-      <>
-        <Header />
         <Routing />
-      </>
     </div>
   );
 }

@@ -18,4 +18,5 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
     List<Ingredient> findByCategoryAndProteinIsBetween(IngredientCategory category, int protein, int protein2);
 
     Ingredient findByName(String name);
+    Ingredient findById(long id);
 }
