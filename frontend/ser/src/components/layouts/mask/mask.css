@@ -7,4 +7,5 @@
     z-index: -1;
     left: 20%;
     bottom: 30%;
+    overflow: hidden;
 }
