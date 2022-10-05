@@ -36,7 +36,7 @@ public class IngredientEndpoint {
     }
 
     @GetMapping("/swap/{category}/{id}")
-    public List<Ingredient> swapByCategoryAndProtein(@PathVariable("category") IngredientCategory category, @PathVariable("id") Long id) {
+    public List<Ingredient> swapByCategoryAndProtein(@PathVariable("category") IngredientCategory category, @PathVariable("id") long id) {
 
         Ingredient ingredient = ingredientSwapService.findById(id);
         return ingredientSwapService.swapIngredientByCategoryAndProtein(category, ingredient);
