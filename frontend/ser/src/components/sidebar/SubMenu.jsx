@@ -66,7 +66,7 @@ const SubMenu = ({ item }) => {
       {subnav &&
         item.subNav.map((item, index) => {
           return (
-            <DropdownLink to={item.path} key={index}>
+            <DropdownLink to={item.path} key={index} >
               {item.icon}
               <SidebarLabel>{item.title}</SidebarLabel>
             </DropdownLink>

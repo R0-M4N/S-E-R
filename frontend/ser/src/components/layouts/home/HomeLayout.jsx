@@ -4,7 +4,7 @@ import HeaderLayout from "../header/HeaderLayout";
 const HomeLayout = () => {
   return (
     <>
-    <HeaderLayout />
+    <HeaderLayout title={"FooDashboard"}/>
     </>
   )
 }
