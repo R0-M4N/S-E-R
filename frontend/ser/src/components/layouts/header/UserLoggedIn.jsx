@@ -1,28 +1,14 @@
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import ButtonAtom from "../../atoms/ButtonAtom";
 
 export default function UserLoggedIn() {
     return (
         <>
             <Link to="/logout"> 
-                <Button variant="contained" 
-                id="logout-button"
-                style={{
-                    position: "absolute",
-                    left: "87%",
-                    top: "5%",
-                    background: "orange"
-                }}>Log out</Button>
+                <ButtonAtom buttonType="logout"/>
             </Link>
 
-            <Button variant="contained" disabled={true}
-                style={{
-                    position: "absolute",
-                    left: "80%",
-                    top: "5%",
-                    background: "orange"
-                    }}>Profile
-            </Button>
+            <ButtonAtom buttonType="profile"/>
         </>
     )
 }
