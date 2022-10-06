@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import "./header.css";
 import MaskLayout from "../mask/MaskLayout";
 import UserButtons from "./UserButtons";
+import ToggleColorMode from "../../lightordarkmode/ToggleMode";
 
 const HeaderLayout = ({title}) => {
     return (
@@ -11,6 +12,7 @@ const HeaderLayout = ({title}) => {
             </div>
             <MaskLayout />
             <UserButtons />
+            <ToggleColorMode />
         </div>
     )
 }
