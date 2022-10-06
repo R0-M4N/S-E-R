@@ -1,4 +1,4 @@
-import { Drawer, Box, Typography, IconButton, List, ListItem, ListItemIcon, ListItemText, Divider, MenuItem } from '@mui/material';
+import { Drawer, Box, Typography, IconButton, List, ListItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
