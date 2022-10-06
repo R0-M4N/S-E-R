@@ -8,3 +8,9 @@
     text-decoration: none;
     color: black;
 }
+
+.drawer-icon-button {
+    position: absolute;
+    left: 40px;
+    top: 24px;
+}

@@ -40,7 +40,7 @@ const TemporaryDrawer = () => {
               <Link className='drawer-link' to={item.url} onClick={() => setIsDrawerOpen(false)}>
                 <ListItem button key={item.text}>
                   <ListItemIcon>
-                    {item.text == 'Swapper' ? <SwapHorizIcon /> : <RamenDiningIcon />}
+                    {item.text === 'Swapper' ? <SwapHorizIcon /> : <RamenDiningIcon />}
                   </ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItem>
