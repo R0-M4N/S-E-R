@@ -11,6 +11,9 @@ import java.util.List;
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
     List<Ingredient> findAllIngredientsByProteinIsBetween(int protein, int protein2);
 
+    List<Ingredient> findAllIngredientsByProteinIsBetweenAndNameIsNot(
+            int proteinMin, int proteinMax, String name);
+
     List<Ingredient> findByCategoryAndProteinIsBetween
             (IngredientCategory category, int protein, int protein2);
 
