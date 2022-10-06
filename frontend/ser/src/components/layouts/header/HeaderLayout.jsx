@@ -10,9 +10,11 @@ const HeaderLayout = ({title}) => {
             <div className="header">
                 <h1>{title}</h1>
             </div>
+            <div className="toggle-icon">
+                <ToggleColorMode />
+            </div>
             <MaskLayout />
             <UserButtons />
-            <ToggleColorMode />
         </div>
     )
 }

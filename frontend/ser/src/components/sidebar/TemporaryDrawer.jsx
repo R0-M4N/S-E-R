@@ -22,7 +22,7 @@ const TemporaryDrawer = () => {
     <Drawer anchor='left' open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
       <Box className='drawer-box' role='presentation'>
         <Typography variant='h6' component='div'>
-          Side Panel
+          
         </Typography>
         <List>
           {[{ text: 'Home', url: '/'}].map((item) => (
