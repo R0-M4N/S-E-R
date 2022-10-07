@@ -25,3 +25,8 @@
 
     background: #333333;
 }
+
+.toggle-icon{
+    position: absolute;
+    left: 70%;
+}
