@@ -16,11 +16,11 @@ public class IngredientSwapService {
     }
 
     public Ingredient swapByProtein(long id) {
-        Ingredient pickedIngredient = ingredientRepository.findById(id);
-        int amount = pickedIngredient.getProtein();
+        Ingredient pickedIngredient = findById(id);
+        int proteinCount = pickedIngredient.getProtein();
         List<Ingredient> eligibleIngredients = ingredientRepository.findAllIngredientsByProteinIsBetweenAndNameIsNot(
-                amount - 8, amount + 20, pickedIngredient.getName());
-        if(eligibleIngredients.isEmpty()){
+                proteinCount - 8, proteinCount + 20, pickedIngredient.getName());
+        if (eligibleIngredients.isEmpty()) {
             return new Ingredient("No match found", 0, null);
         }
         return eligibleIngredients.get(0);
@@ -32,6 +32,6 @@ public class IngredientSwapService {
     }
 
     public Ingredient findById(Long id) {
-        return ingredientRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        return ingredientRepository.getReferenceById(id);
     }
 }
