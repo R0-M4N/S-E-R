@@ -3,11 +3,11 @@ import ShowResult from './ShowResult';
 import { useState } from "react";
 
 const IngredientSelect = ({ ingredients }) => {
-  const [exchangedIngredient, setExchangedIngredient] = useState("");
+  const [exchangedIngredient, setExchangedIngredient] = useState({id: '', name: '', protein: ''});
 
   const handleChange = event => {
     const value = event.target.value;
-    const URL = "http://localhost:8080/ingredients/swap/" + value;
+    const URL = "http://localhost:8080/ingredients/swap/" + value; //Figure the environment variables out!!!
     fetch(URL, {method: 'GET'})
       .then((response) => response.json())
       .then((data) => setExchangedIngredient(data))
@@ -15,20 +15,20 @@ const IngredientSelect = ({ ingredients }) => {
   return (
     <>
     <FormControl sx={{minWidth:200, paddingLeft: 50, top: 80}}>
-    <TextField
-          variant="outlined"
-          value={ingredients.id}
-          onChange={handleChange}
-          className="select-container"
-          select
-          label="Select your ingredient"
-        >
-            {ingredients.map ((ingredient) =>
-            <MenuItem key={ingredient.id} value={ingredient.id}>
-                {ingredient.name}
-            </MenuItem>
-            )}
-          </TextField>
+      <TextField
+        variant="outlined"
+        value={ingredients.id}
+        onChange={handleChange}
+        className="select-container"
+        select
+        label="Select your ingredient"
+        defaultValue={''}>
+          {ingredients.map ((ingredient) =>
+          <MenuItem key={ingredient.id} value={ingredient.id}>
+              {ingredient.name}
+          </MenuItem>
+          )}
+      </TextField>
     </FormControl>
     <ShowResult result={exchangedIngredient}/>
     </>

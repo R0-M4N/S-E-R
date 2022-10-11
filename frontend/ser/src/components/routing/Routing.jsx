@@ -10,9 +10,9 @@ const Routing = () => {
     <Router>
         <TemporaryDrawer />
         <Routes>
-        <Route path='/' exact element={<Home />} />
-        <Route path='/swap' exact element={<SwapIngredient />} />
-            <Route path='login' exact element={<Login />} />
+          <Route path='/' exact element={<Home />} />
+          <Route path='/swap' exact element={<SwapIngredient />} />
+          <Route path='login' exact element={<Login />} />
         </Routes>
     </Router>
   )

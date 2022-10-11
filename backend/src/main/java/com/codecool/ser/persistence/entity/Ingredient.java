@@ -2,10 +2,12 @@ package com.codecool.ser.persistence.entity;
 
 
 import com.codecool.ser.data.IngredientCategory;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
-
 
 @Entity
 @Setter
