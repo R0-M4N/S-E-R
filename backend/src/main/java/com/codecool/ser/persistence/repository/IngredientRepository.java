@@ -13,5 +13,5 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
             int proteinMin, int proteinMax, String name);
 
     List<Ingredient> findByCategoryAndProteinIsBetween
-            (IngredientCategory category, int protein, int protein2);
+            (IngredientCategory category, int proteinMin, int proteinMax);
 }
