@@ -10,7 +10,8 @@ import java.util.List;
 @Service
 public class IngredientSwapService {
     private final IngredientRepository ingredientRepository;
-
+    private static final int LOWER_RANGE = 5;
+    private static final int UPPER_RANGE = 20;
     public IngredientSwapService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
@@ -19,7 +20,7 @@ public class IngredientSwapService {
         Ingredient pickedIngredient = findById(id);
         int proteinCount = pickedIngredient.getProtein();
         List<Ingredient> eligibleIngredients = ingredientRepository.findAllIngredientsByProteinIsBetweenAndNameIsNot(
-                proteinCount - 8, proteinCount + 20, pickedIngredient.getName());
+                proteinCount - LOWER_RANGE, proteinCount + UPPER_RANGE, pickedIngredient.getName());
         if (eligibleIngredients.isEmpty()) {
             return new Ingredient("No match found", 0, null);
         }
@@ -28,7 +29,7 @@ public class IngredientSwapService {
 
     public List<Ingredient> swapIngredientByCategoryAndProtein(IngredientCategory category, Ingredient pickedIngredient) {
         int amount = pickedIngredient.getProtein();
-        return ingredientRepository.findByCategoryAndProteinIsBetween(category, amount - 5, amount + 20);
+        return ingredientRepository.findByCategoryAndProteinIsBetween(category, amount - LOWER_RANGE, amount + UPPER_RANGE);
     }
 
     public Ingredient findById(Long id) {
