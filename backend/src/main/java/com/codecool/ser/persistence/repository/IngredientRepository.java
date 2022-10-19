@@ -9,6 +9,7 @@ import java.util.List;
 
 @RepositoryRestController
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
+
     List<Ingredient> findAllIngredientsByProteinIsBetweenAndNameIsNot(
             int proteinMin, int proteinMax, String name);
 

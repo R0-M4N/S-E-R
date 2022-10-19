@@ -2,46 +2,45 @@ package com.codecool.ser.persistence.repository;
 
 import com.codecool.ser.data.IngredientCategory;
 import com.codecool.ser.persistence.entity.Ingredient;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@ExtendWith(SpringExtension.class)
-@DataJpaTest
-class IngredientRepositoryTest {
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 
-    @Autowired
-    TestEntityManager entityManager;
+@DataJpaTest
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class IngredientRepositoryTest {
     @Autowired
     IngredientRepository ingredientRepository;
 
-    @AfterEach
+    TestIngredientsProvider provider = new TestIngredientsProvider();
+
+    @BeforeAll
+    void addAllData(){ingredientRepository.saveAll(provider.getIngredient()); }
+
+    @AfterAll
     void after(){
         ingredientRepository.deleteAll();
     }
 
     @Test
     void findByCategoryAndProteinIsBetween() {
-        Ingredient first = new Ingredient("Pineapple", 10, IngredientCategory.FRUIT);
-        entityManager.persist(first);
-        Ingredient second = new Ingredient("Grape", 5, IngredientCategory.FRUIT);
-        entityManager.persist(second);
-        Ingredient third = new Ingredient("Chicken", 25, IngredientCategory.MEAT);
-        entityManager.persist(third);
-        Ingredient fourth = new Ingredient("Cow", 30, IngredientCategory.MEAT);
-        entityManager.persist(fourth);
-        Ingredient fifth = new Ingredient("Snake", 6, IngredientCategory.MEAT);
-        entityManager.persist(fifth);
+        List<Ingredient> ingredientList = ingredientRepository.findAll();
+        List<Ingredient> ingredientResult = ingredientRepository.
+                findByCategoryAndProteinIsBetween(IngredientCategory.MEAT, 5, 30);
+        Ingredient expected = ingredientList.get(4);
+        System.out.println(expected +" "+ ingredientResult.get(0));
 
-        List<Ingredient> ingredient = ingredientRepository.findByCategoryAndProteinIsBetween(IngredientCategory.MEAT, 5, 30);
-
+        Assertions.assertEquals(expected, ingredientResult.get(0));
+        //Assertions.assertIterableEquals(expected, ingredientResult);
     }
 }
