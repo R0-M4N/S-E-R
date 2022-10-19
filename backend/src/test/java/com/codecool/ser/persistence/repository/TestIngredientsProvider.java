@@ -2,6 +2,8 @@ package com.codecool.ser.persistence.repository;
 
 import com.codecool.ser.data.IngredientCategory;
 import com.codecool.ser.persistence.entity.Ingredient;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 public class TestIngredientsProvider {

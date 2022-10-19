@@ -2,10 +2,7 @@ package com.codecool.ser.persistence.entity;
 
 
 import com.codecool.ser.data.IngredientCategory;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -14,6 +11,8 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @ToString
+@Builder
+@AllArgsConstructor
 public class Ingredient {
     @Id
     @GeneratedValue
