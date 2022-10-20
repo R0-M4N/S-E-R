@@ -20,11 +20,4 @@ class IngredientServiceTest {
         verify(ingredientRepository).findAll();
     }
 
-    /*@Test
-    void addIngredient() {
-        Ingredient ingredient = Ingredient.builder().build();
-        ingredientService.addIngredient(ingredient);
-
-        verify(ingredientRepository).save(ingredient);
-    }*/
 }

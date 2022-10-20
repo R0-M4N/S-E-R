@@ -13,13 +13,8 @@ public class IngredientService {
     public IngredientService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
-
     public List<Ingredient> findAll() {
         return ingredientRepository.findAll();
     }
 
-    public Ingredient addIngredient(Ingredient ingredient) {
-        Ingredient newIngredient = new Ingredient(ingredient.getName(), ingredient.getProtein(), ingredient.getCategory());
-        return ingredientRepository.save(newIngredient);
-    }
 }

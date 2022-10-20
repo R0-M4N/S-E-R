@@ -25,11 +25,6 @@ public class IngredientEndpoint {
         return ingredientService.findAll();
     }
 
-    @PostMapping
-    public Ingredient addIngredient(@RequestBody Ingredient ingredient) {
-        return ingredientService.addIngredient(ingredient);
-    }
-
     @GetMapping("/swap/{id}")
     public Ingredient swapByProtein(@PathVariable long id) {
         return ingredientSwapService.swapByProtein(id);
