@@ -22,6 +22,8 @@ class IngredientRepositoryTest {
     @Autowired
     IngredientRepository ingredientRepository;
 
+    private static final int PROTEIN_MIN = 5;
+    private static final int PROTEIN_MAX = 30;
     TestIngredientsProvider provider = new TestIngredientsProvider();
 
     @BeforeAll
@@ -36,11 +38,13 @@ class IngredientRepositoryTest {
     void findByCategoryAndProteinIsBetween() {
         List<Ingredient> ingredientList = ingredientRepository.findAll();
         List<Ingredient> ingredientResult = ingredientRepository.
-                findByCategoryAndProteinIsBetween(IngredientCategory.MEAT, 5, 30);
+                findByCategoryAndProteinIsBetween
+                        (IngredientCategory.MEAT, PROTEIN_MIN, PROTEIN_MAX);
         Ingredient expected = ingredientList.get(4);
         System.out.println(expected +" "+ ingredientResult.get(0));
 
         Assertions.assertEquals(expected, ingredientResult.get(0));
-        //Assertions.assertIterableEquals(expected, ingredientResult);
     }
+
+    //Assertions.assertIterableEquals(expected, ingredientResult);
 }
