@@ -1,20 +1,29 @@
-import {FormControl, MenuItem, TextField} from '@mui/material'
+import './swap.css';
+import {FormControl, MenuItem, TextField} from '@mui/material';
 import ShowResult from './ShowResult';
-import { useState } from "react";
+import { useState } from 'react';
+import { CircularProgress } from '@mui/material';
 
 const IngredientSelect = ({ ingredients }) => {
   const [exchangedIngredient, setExchangedIngredient] = useState({id: '', name: '', protein: ''});
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = event => {
     const value = event.target.value;
     const URL = "http://localhost:8080/ingredients/swap/" + value; //Figure the environment variables out!!!
+    setIsLoading(true);
     fetch(URL, {method: 'GET'})
       .then((response) => response.json())
       .then((data) => setExchangedIngredient(data))
-}
+    
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 800)
+  }
+
   return (
-    <>
-    <FormControl sx={{minWidth:200, paddingLeft: 50, top: 80}}>
+    <div className='ingredient-swapper'>
+    <FormControl className='select-form' sx={{minWidth:200, paddingLeft: 50, top: 80, float: 'left'}}>
       <TextField
         variant="outlined"
         value={ingredients.id}
@@ -24,14 +33,17 @@ const IngredientSelect = ({ ingredients }) => {
         label="Select your ingredient"
         defaultValue={''}>
           {ingredients.map ((ingredient) =>
-          <MenuItem key={ingredient.id} value={ingredient.id}>
+          <MenuItem className='select-item' key={ingredient.id} value={ingredient.id}>
               {ingredient.name}
           </MenuItem>
           )}
       </TextField>
     </FormControl>
-    <ShowResult result={exchangedIngredient}/>
-    </>
+    {isLoading ? 
+      <CircularProgress className='circular-progress' color="inherit" /> :
+      <ShowResult result={exchangedIngredient}/>
+    }
+    </div>
   )
 }
 

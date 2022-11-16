@@ -1,10 +1,8 @@
-import { Button } from "@mui/material"
-
 const ShowResult = ({result}) => {
         return (
-            <Button style={{top: 80}}>
+            <p className='swap-result'>
                 {result.name ? result.name : ''}
-            </Button>
+            </p>
         )
 }
 

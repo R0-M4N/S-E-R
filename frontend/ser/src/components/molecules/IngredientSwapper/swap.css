@@ -1,4 +1,21 @@
 .select-container {
+    background-color: #ffecd1;
+}
+
+ul {
+    background-color: rgba(21, 97, 109, 0.8);
+    color: #ffecd1;
+}
+
+.circular-progress {
     position: absolute;
-    top: 800px;
+    top: 13.5%;
+    left: 34%;
+}
+
+.swap-result {
+    position: absolute;
+    top: 12%;
+    left: 37%;
+    font-size: 25px;
 }

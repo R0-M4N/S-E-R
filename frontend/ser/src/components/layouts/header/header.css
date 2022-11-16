@@ -3,8 +3,10 @@
     font-size: 20px;
     bottom: 91%;
     left: 40%;
-    top: 1%
+    top: 1%;
+    color: rgba(21, 97, 109, 0.8);
 }
+
 
 .profile-logo {
     position: absolute;
