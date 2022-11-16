@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import "./header.css";
-import MaskLayout from "../mask/MaskLayout";
 import UserButtons from "./UserButtons";
 import ToggleColorMode from "../../lightordarkmode/ToggleMode";
 
@@ -13,7 +12,6 @@ const HeaderLayout = ({title}) => {
             <div className="toggle-icon">
                 <ToggleColorMode />
             </div>
-            <MaskLayout />
             <UserButtons />
         </div>
     )
