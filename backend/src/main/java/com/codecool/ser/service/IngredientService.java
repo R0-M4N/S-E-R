@@ -13,8 +13,8 @@ public class IngredientService {
     public IngredientService(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
+
     public List<Ingredient> findAll() {
         return ingredientRepository.findAll();
     }
-
 }
