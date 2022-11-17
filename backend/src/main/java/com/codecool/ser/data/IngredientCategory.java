@@ -1,5 +1,5 @@
 package com.codecool.ser.data;
 
 public enum IngredientCategory {
-    FRUIT, MEAT, VEGETABLE, DAIRY, NUT, FISH, BREAD
+    FRUIT, MEAT, VEGETABLE, DAIRY, NUT, FISH, BREAD, EGG
 }

@@ -1,8 +1,13 @@
-const ShowResult = ({result}) => {
+const ShowResult = ({ result }) => {
         return (
-            <p className='swap-result'>
-                {result.name ? result.name : ''}
-            </p>
+            <div className="swap-result">
+            {result.map((item) => 
+                <p key={item.id}>
+                    {item.name}
+                </p>
+            )}
+            </div>
+            
         )
 }
 

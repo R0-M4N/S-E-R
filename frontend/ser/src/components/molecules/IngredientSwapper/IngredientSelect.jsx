@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { CircularProgress } from '@mui/material';
 
 const IngredientSelect = ({ ingredients }) => {
-  const [exchangedIngredient, setExchangedIngredient] = useState({id: '', name: '', protein: ''});
+  const [exchangedIngredients, setExchangedIngredients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = event => {
@@ -14,7 +14,7 @@ const IngredientSelect = ({ ingredients }) => {
     setIsLoading(true);
     fetch(URL, {method: 'GET'})
       .then((response) => response.json())
-      .then((data) => setExchangedIngredient(data))
+      .then((data) => setExchangedIngredients(data))
     
     setTimeout(() => {
       setIsLoading(false);
@@ -32,7 +32,7 @@ const IngredientSelect = ({ ingredients }) => {
         select
         label="Select your ingredient"
         defaultValue={''}>
-          {ingredients.map ((ingredient) =>
+          {ingredients.map((ingredient) =>
           <MenuItem className='select-item' key={ingredient.id} value={ingredient.id}>
               {ingredient.name}
           </MenuItem>
@@ -41,7 +41,7 @@ const IngredientSelect = ({ ingredients }) => {
     </FormControl>
     {isLoading ? 
       <CircularProgress className='circular-progress' color="inherit" /> :
-      <ShowResult result={exchangedIngredient}/>
+      <ShowResult result={exchangedIngredients}/>
     }
     </div>
   )
