@@ -10,7 +10,7 @@ import './drawer.css';
 const TemporaryDrawer = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const user = 'robs';
+  const user = null;
 
   if (!user) {
   return (
@@ -40,8 +40,8 @@ const TemporaryDrawer = () => {
           <List>
             {[{ text: 'Swapper', url: '/swap' },
               { text: 'Meal Plans', url: '/meal-plans' }].map((item) => (
-                <Link key={item.text} disabled='true' className='drawer-link'>
-                  <ListItem button disabled='true'>
+                <Link key={item.text} disabled={true} className='drawer-link'>
+                  <ListItem button disabled={true}>
                     <ListItemIcon>
                       {item.text === 'Swapper' ? <SwapHorizIcon /> : <RamenDiningIcon />}
                     </ListItemIcon>
