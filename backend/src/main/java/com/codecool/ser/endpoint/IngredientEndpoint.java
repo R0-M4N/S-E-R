@@ -6,9 +6,7 @@ import com.codecool.ser.service.IngredientService;
 import com.codecool.ser.service.IngredientSwapService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -29,19 +27,12 @@ public class IngredientEndpoint {
 
     @GetMapping("/swap/{id}")
     public List<Ingredient> swapByProtein(@PathVariable long id) throws IllegalArgumentException {
-        List<Optional<Ingredient>> ingredientsOpt = ingredientSwapService.swapByProtein(id);
-        List<Ingredient> ingredients = new ArrayList<>(ingredientsOpt.size());
-
-        for (Optional<Ingredient> optionalIngredient : ingredientsOpt) {
-            Ingredient ingredient = optionalIngredient.orElseThrow(IllegalArgumentException::new);
-            ingredients.add(ingredient);
-        }
-
-        return ingredients;
+        return ingredientSwapService.swapByProtein(id);
     }
 
     @GetMapping("/swap/{category}/{id}")
-    public List<Ingredient> swapByCategoryAndProtein(@PathVariable("category") IngredientCategory category, @PathVariable("id") long id) {
+    public List<Ingredient> swapByCategoryAndProtein(@PathVariable("category") IngredientCategory category,
+                                                     @PathVariable("id") long id) {
         Ingredient ingredient = ingredientSwapService.findById(id);
         return ingredientSwapService.swapIngredientByCategoryAndProtein(category, ingredient);
     }

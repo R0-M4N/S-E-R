@@ -6,12 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RepositoryRestController
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
 
-    List<Optional<Ingredient>> findAllIngredientsByProteinIsBetweenAndNameIsNot(
+    List<Ingredient> findAllIngredientsByProteinIsBetweenAndNameIsNot(
             int proteinMin, int proteinMax, String name);
 
     List<Ingredient> findByCategoryAndProteinIsBetween
