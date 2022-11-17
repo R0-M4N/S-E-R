@@ -1,0 +1,17 @@
+.banner {
+    position: absolute;
+    left: 300px;
+    top: 150px;
+}
+
+.profile-pic {
+    position: absolute;
+    left: 300px;
+    top: 280px;
+}
+
+.about-section {
+    position: absolute;
+    left: 430px;
+    top: 280px;
+}

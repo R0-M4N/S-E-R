@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Input } from '@mui/material'
 
 const ButtonAtom = ({buttonType}) => {
     switch (buttonType) {
@@ -43,6 +43,20 @@ const ButtonAtom = ({buttonType}) => {
                     background: "orange"
                 }}
                 >Sign up</Button>
+            )
+        case "submit":
+            return (
+                <Input
+                type='submit'
+                style={{
+                    marginTop: "10px",
+                    cursor: "pointer",
+                    fontSize: "15px",
+                    background: "orange",
+                    color: "#fff",
+                    padding: "10px 20px"
+                }}>
+                </Input>
             )
         default:
             return (
