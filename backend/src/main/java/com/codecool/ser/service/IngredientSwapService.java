@@ -6,6 +6,7 @@ import com.codecool.ser.persistence.repository.IngredientRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class IngredientSwapService {
@@ -16,15 +17,12 @@ public class IngredientSwapService {
         this.ingredientRepository = ingredientRepository;
     }
 
-    public Ingredient swapByProtein(long id) {
+    public List<Optional<Ingredient>> swapByProtein(long id) {
         Ingredient pickedIngredient = findById(id);
         int proteinCount = pickedIngredient.getProtein();
-        List<Ingredient> eligibleIngredients = ingredientRepository.findAllIngredientsByProteinIsBetweenAndNameIsNot(
+
+        return ingredientRepository.findAllIngredientsByProteinIsBetweenAndNameIsNot(
                 proteinCount - LOWER_RANGE, proteinCount + UPPER_RANGE, pickedIngredient.getName());
-        if (eligibleIngredients.isEmpty()) {
-            return new Ingredient("No match found", 0, null);
-        }
-        return eligibleIngredients.get(0);
     }
 
     public List<Ingredient> swapIngredientByCategoryAndProtein(IngredientCategory category, Ingredient pickedIngredient) {

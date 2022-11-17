@@ -30,4 +30,7 @@ dataset:
       - name: Hazelnut
         protein: 3
         category: NUT
+      - name: Egg
+        protein: 10
+        category: VEGETARIAN
 
