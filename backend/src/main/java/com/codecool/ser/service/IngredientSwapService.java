@@ -20,12 +20,10 @@ public class IngredientSwapService {
     public List<Ingredient> swapByProtein(long id) {
         Ingredient pickedIngredient = findById(id);
         int proteinCount = pickedIngredient.getProtein();
-        List<Ingredient> eligibleIngredients = ingredientRepository.findAllIngredientsByProteinIsBetweenAndNameIsNot(
+        return ingredientRepository.findAllIngredientsByProteinIsBetweenAndNameIsNot(
                 proteinCount - LOWER_RANGE,
                 proteinCount + UPPER_RANGE,
                 pickedIngredient.getName());
-
-        return eligibleIngredients;
     }
 
     public List<Ingredient> swapIngredientByCategoryAndProtein(IngredientCategory category,
