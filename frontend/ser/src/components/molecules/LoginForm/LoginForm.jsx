@@ -49,7 +49,7 @@ const database = [
     }
 
     const renderForm = (
-        <div className="form">
+        <div className="login-form">
           <form onSubmit={handleSubmit}>
             <div className="input-container">
               <label>Username </label>
@@ -70,9 +70,7 @@ const database = [
 
     return (
         <div className="login-container">
-            <div className="login-form">
             {isSubmitted ? <Navigate replace to="/swap" /> : renderForm}
-            </div>
         </div>
         );
     }
