@@ -3,6 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import RamenDiningIcon from '@mui/icons-material/RamenDining';
+import CalculateIcon from '@mui/icons-material/Calculate';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './drawer.css';
@@ -10,7 +11,7 @@ import './drawer.css';
 const TemporaryDrawer = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const user = null;
+  const user = 'null';
 
   if (!user) {
   return (
@@ -81,11 +82,15 @@ const TemporaryDrawer = () => {
         <Divider />
         <List>
           {[{ text: 'Swapper', url: '/swap' },
-            { text: 'Meal Plans', url: '/meal-plans' }].map((item) => (
+            { text: 'Meal Plans', url: '/meal-plans' },
+            { text: 'BMI Calculator', url: '/bmi-calculator' }].map((item) => (
               <Link key={item.text} className='drawer-link' to={item.url} onClick={() => setIsDrawerOpen(false)}>
                 <ListItem button>
                   <ListItemIcon>
-                    {item.text === 'Swapper' ? <SwapHorizIcon /> : <RamenDiningIcon />}
+                    {item.text === 'Swapper' ? <SwapHorizIcon /> :
+                     item.text === 'Meal Plans' ? <RamenDiningIcon /> :
+                     item.text === 'BMI Calculator' ? <CalculateIcon /> :
+                     console.log('No icon prepared with zis name')}
                   </ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItem>
