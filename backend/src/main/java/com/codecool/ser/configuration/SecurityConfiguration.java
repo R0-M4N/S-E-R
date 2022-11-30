@@ -26,7 +26,6 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
-
     private final RsaKeyProperties rsaKeys;
 
     public SecurityConfiguration(RsaKeyProperties rsaKeys) {
