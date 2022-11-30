@@ -39,5 +39,7 @@ dataset:
       - name: Yogurt
         protein: 55
         category: DAIRY
-
-
+#---
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
