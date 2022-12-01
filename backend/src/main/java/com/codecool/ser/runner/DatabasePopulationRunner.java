@@ -13,7 +13,7 @@ import java.util.List;
 
 @Configuration
 @ConfigurationProperties("dataset")
-public class RunnerConfiguration {
+public class DatabasePopulationRunner {
 
     List<Ingredient> ingredients;
     List<AppUser> users;

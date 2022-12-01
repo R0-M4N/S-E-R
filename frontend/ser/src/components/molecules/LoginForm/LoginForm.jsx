@@ -2,21 +2,15 @@ import "./login.css";
 import { useState } from "react";
 import ButtonAtom from "../../atoms/ButtonAtom";
 import { Navigate } from 'react-router-dom';
+import { useLocalState } from '../../../util/LocalStorage.jsx'
 
 const LoginForm = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [jwt, setJwt] = useLocalState("", "jwt");
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-
-const database = [
-    {
-      username: "user1",
-      password: "pass1"
-    },
-    {
-      username: "user2",
-      password: "pass2"
-    }
-  ];
+    const url = "http://localhost.localdomain:8080/api/auth/login"
 
   const errors = {
     uname: "invalid username",
@@ -28,37 +22,55 @@ const database = [
         <div className="error">{errorMessages.message}</div>
         );
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    function sendLoginRequest() {
+      const reqBody = {
+        username: username,
+        password: password,
+      };
 
-        var { uname, pass } = document.forms[0];
-
-        const userData = database.find((user) => user.username === uname.value);
-
-        if (userData) {
-            if (userData.password !== pass.value) {
-              // Invalid password
-              setErrorMessages({ name: "pass", message: errors.pass });
-            } else {
-              setIsSubmitted(true);
-            }
-          } else {
-            // Username not found
-            setErrorMessages({ name: "uname", message: errors.uname });
-          }
+      fetch(url, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "post",
+        body: JSON.stringify(reqBody),
+      })
+      .then((response) => {
+        if (response.status === 200)
+          return Promise.all([response.json], response.headers);
+        else return Promise.reject("Invalid login attempt!");
+      })
+      .then(([body, headers]) => {
+        setJwt(headers.get("authorization"));
+      })
+      .catch((message) => {
+        alert(message);
+      });
     }
 
     const renderForm = (
         <div className="login-form">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={sendLoginRequest}>
             <div className="input-container">
               <label>Username </label>
-              <input type="text" name="uname" required />
+              <input 
+                type="text" 
+                name="uname" 
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+                required 
+              />
               {renderErrorMessage("uname")}
             </div>
             <div className="input-container">
               <label>Password </label>
-              <input type="password" name="pass" required />
+              <input 
+                type="password" 
+                name="pass" 
+                value={password} 
+                required 
+                onChange={(event) => setPassword(event.target.value)}
+              />
               {renderErrorMessage("pass")}
             </div>
             <div className="button-container">
