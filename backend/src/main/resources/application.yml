@@ -39,6 +39,11 @@ dataset:
       - name: Yogurt
         protein: 55
         category: DAIRY
+  users:
+      - username: admin
+        password: password
+        email: admin@foodashboard.com
+        accountNonLocked: true
 #---
 rsa:
   private-key: classpath:certs/private.pem
