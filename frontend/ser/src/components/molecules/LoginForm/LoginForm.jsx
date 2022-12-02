@@ -37,11 +37,12 @@ const LoginForm = () => {
       })
       .then((response) => {
         if (response.status === 200)
-          return Promise.all([response.json], response.headers);
+          return response.text();
         else return Promise.reject("Invalid login attempt!");
       })
-      .then(([body, headers]) => {
-        setJwt(headers.get("authorization"));
+      .then((response) => {
+        console.log(response.text());
+        setJwt(response.text());
       })
       .catch((message) => {
         alert(message);

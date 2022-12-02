@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("ingredients")
+@CrossOrigin
 public class IngredientEndpoint {
     private final IngredientService ingredientService;
     private final IngredientSwapService ingredientSwapService;
