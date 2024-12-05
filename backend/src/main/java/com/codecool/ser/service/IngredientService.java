@@ -17,9 +17,4 @@ public class IngredientService {
     public List<Ingredient> findAll() {
         return ingredientRepository.findAll();
     }
-
-    public Ingredient addIngredient(Ingredient ingredient) {
-        Ingredient newIngredient = new Ingredient(ingredient.getName(), ingredient.getProtein());
-        return ingredientRepository.save(newIngredient);
-    }
 }

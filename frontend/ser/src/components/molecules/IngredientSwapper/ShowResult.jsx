@@ -1,12 +1,14 @@
-import { Button} from "@mui/material"
-
-const ShowResult = ({result}) => {
-    console.log("result")
-    return (
-        <Button>
-            {result.name ? result.name : ""}
-        </Button>
-    )
+const ShowResult = ({ result }) => {
+        return (
+            <div className="swap-result">
+            {result.map((item) => 
+                <p key={item.id}>
+                    {item.name}
+                </p>
+            )}
+            </div>
+            
+        )
 }
 
 export default ShowResult;

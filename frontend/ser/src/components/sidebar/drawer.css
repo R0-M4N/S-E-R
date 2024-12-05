@@ -1,0 +1,17 @@
+.drawer-box {
+    padding: 2;
+    width:  300px;
+    text-align: center;
+    background-color: #ffecd1;
+}
+
+.drawer-link {
+    text-decoration: none;
+    color: black;
+}
+
+.drawer-icon-button {
+    position: absolute;
+    left: 40px;
+    top: 24px;
+}

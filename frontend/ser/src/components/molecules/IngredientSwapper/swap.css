@@ -1,0 +1,19 @@
+.select-container {
+    background-color: #ffecd1;
+}
+
+ul {
+    background-color: rgba(21, 97, 109, 0.8);
+    color: #ffecd1;
+}
+
+.circular-progress {
+    margin-top: 4.7%;
+    margin-left: 3.3%;
+}
+
+.swap-result {
+    font-size: 25px;
+    padding-left: 42%;
+    padding-top: 3.6%;
+}
